@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:lovish_enterprises/website/bottom.dart';
@@ -22,8 +21,7 @@ class _EnquiryState extends State<Enquiry> {
       appBar: AppBar(
           toolbarHeight: 80,
           backgroundColor: Colors.cyan[700],
-          title: const AppbarView()
-        ),
+          title: const AppbarView()),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -39,7 +37,7 @@ class _EnquiryState extends State<Enquiry> {
                 ),
               ),
             ),
-             const Divider(
+            const Divider(
               indent: 100,
               endIndent: 100,
               color: Colors.cyan,
@@ -73,8 +71,9 @@ class _EnquiryState extends State<Enquiry> {
                       validator: (value) {
                         if (value!.isEmpty) {
                           return 'Please enter your email';
+                        } else if (value.isValidEmail == false) {
+                          return "Please enter a valid email address";
                         }
-                        // You can add more specific email validation here
                         return null;
                       },
                     ),
@@ -82,10 +81,9 @@ class _EnquiryState extends State<Enquiry> {
                     TextFormField(
                       keyboardType: TextInputType.number,
                       inputFormatters: <TextInputFormatter>[
-                                    FilteringTextInputFormatter.allow(
-                                        RegExp(r'[0-9]')),
-                                    FilteringTextInputFormatter.digitsOnly
-                                  ],
+                        FilteringTextInputFormatter.allow(RegExp(r'[0-9]')),
+                        FilteringTextInputFormatter.digitsOnly
+                      ],
                       decoration: const InputDecoration(
                         labelText: 'Phone',
                         border: OutlineInputBorder(),
@@ -93,8 +91,9 @@ class _EnquiryState extends State<Enquiry> {
                       validator: (value) {
                         if (value!.isEmpty) {
                           return 'Please enter your Mobile Number';
+                        } else if (value.isValidPhone == false) {
+                          return "Please enter a valid Mobile Number ";
                         }
-                        // You can add more specific phone validation here
                         return null;
                       },
                     ),
@@ -130,9 +129,22 @@ class _EnquiryState extends State<Enquiry> {
                     ElevatedButton(
                       onPressed: () {
                         if (_formKey.currentState!.validate()) {
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(content: Text('Enquiry submitted')),
-                          );
+                          showDialog(
+                              context: context,
+                              builder: (BuildContext context) {
+                                return AlertDialog(
+                                  title: const Text("Success"),
+                                  content: const Text(
+                                      "Enquiry Submitted Successfully"),
+                                  actions: [
+                                    ElevatedButton(
+                                        onPressed: () {
+                                          Navigator.of(context).pop();
+                                        },
+                                        child: const Text("OK"))
+                                  ],
+                                );
+                              });
                         }
                       },
                       child: const Text('Submit'),
@@ -145,6 +157,20 @@ class _EnquiryState extends State<Enquiry> {
           ],
         ),
       ),
-    endDrawer: MediaQuery.of(context).size.width > 1200 ? null : const EndDrawer(),);
+      endDrawer:
+          MediaQuery.of(context).size.width > 1200 ? null : const EndDrawer(),
+    );
+  }
+}
+
+extension extString on String {
+  bool get isValidEmail {
+    final emailRegExp = RegExp(r"^[a-zA-Z0-9.]+@[a-zA-Z0-9]+\.[a-zA-Z]+");
+    return emailRegExp.hasMatch(this);
+  }
+
+  bool get isValidPhone {
+    final phoneRegExp = RegExp(r"^\+?[0-9]{10}$");
+    return phoneRegExp.hasMatch(this);
   }
 }

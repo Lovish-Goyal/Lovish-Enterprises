@@ -32,6 +32,7 @@ class PhysicsView extends StatelessWidget {
                       ),
                     ],
                   )),
+                   MediaQuery.of(context).size.width > 860 ? 
               const Row(
                 children: [
                   VerticalDivider(
@@ -39,7 +40,7 @@ class PhysicsView extends StatelessWidget {
                   ),
                   Side(),
                 ],
-              ),
+              ) : const Text("")
             ],
           ),
         ),
@@ -80,92 +81,92 @@ class Side extends StatelessWidget {
                   height: 5,
                 ),
                 InkWell(
-                    onTap: () => context.go('/dailyequipment'),
+                    onTap: () {},
                     child: Container(
                         width: 300,
                         padding: const EdgeInsets.only(left: 20),
                         margin: const EdgeInsets.only(top: 10, bottom: 10),
-                        child: const Text("DAIRY EQUIPMENTS"))),
+                        child: const Text("PROPERTY OF MATTER FLUIDS"))),
                 const Divider(),
                 InkWell(
-                    onTap: () => context.go('/physics'),
+                    onTap: () {},
                     child: Container(
                         width: 300,
                         padding: const EdgeInsets.only(left: 20),
                         margin: const EdgeInsets.only(top: 10, bottom: 10),
-                        child: const Text("PHYSICS"))),
+                        child: const Text("Elasticity of Materials"))),
                 const Divider(),
                 InkWell(
-                    onTap: () => context.go('/biology'),
+                   onTap: () {},
                     child: Container(
                         width: 300,
                         padding: const EdgeInsets.only(left: 20),
                         margin: const EdgeInsets.only(top: 10, bottom: 10),
-                        child: const Text("BIOLOGY"))),
+                        child: const Text("Electrostatics"))),
                 const Divider(),
                 InkWell(
-                    onTap: () => context.go('/biology'),
+                  onTap: () {},
                     child: Container(
                         width: 300,
                         padding: const EdgeInsets.only(left: 20),
                         margin: const EdgeInsets.only(top: 10, bottom: 10),
-                        child: const Text("BIOLOGY"))),
+                        child: const Text("Heat"))),
                 const Divider(),
                 InkWell(
-                    onTap: () => context.go('/biology'),
+                    onTap: () {},
                     child: Container(
                         width: 300,
                         padding: const EdgeInsets.only(left: 20),
                         margin: const EdgeInsets.only(top: 10, bottom: 10),
-                        child: const Text("BIOLOGY"))),
+                        child: const Text("MAGNETISM & ELECTROMAGNETISM"))),
                 const Divider(),
                 InkWell(
-                    onTap: () => context.go('/biology'),
+                    onTap: () {},
                     child: Container(
                         width: 300,
                         padding: const EdgeInsets.only(left: 20),
                         margin: const EdgeInsets.only(top: 10, bottom: 10),
-                        child: const Text("BIOLOGY"))),
+                        child: const Text("Mechanics"))),
                 const Divider(),
                 InkWell(
-                    onTap: () => context.go('/biology'),
+                   onTap: () {},
                     child: Container(
                         width: 300,
                         padding: const EdgeInsets.only(left: 20),
                         margin: const EdgeInsets.only(top: 10, bottom: 10),
-                        child: const Text("BIOLOGY"))),
+                        child: const Text("Meteorology Earth Science & Solar System"))),
                 const Divider(),
                 InkWell(
-                    onTap: () => context.go('/biology'),
+                     onTap: () {},
                     child: Container(
                         width: 300,
                         padding: const EdgeInsets.only(left: 20),
                         margin: const EdgeInsets.only(top: 10, bottom: 10),
-                        child: const Text("BIOLOGY"))),
+                        child: const Text("MOTION ENERGY & POWER TRANSMISSION"))),
                 const Divider(),
                 InkWell(
-                    onTap: () => context.go('/biology'),
+                     onTap: () {},
                     child: Container(
                         width: 300,
                         padding: const EdgeInsets.only(left: 20),
                         margin: const EdgeInsets.only(top: 10, bottom: 10),
-                        child: const Text("BIOLOGY"))),
+                        child: const Text("OPTICS"))),
                 const Divider(),
                 InkWell(
-                    onTap: () => context.go('/biology'),
+                     onTap: () {},
                     child: Container(
                         width: 300,
                         padding: const EdgeInsets.only(left: 20),
                         margin: const EdgeInsets.only(top: 10, bottom: 10),
-                        child: const Text("BIOLOGY"))),
+                        child: const Text("PROPERTY OF MATTER SOLIDS"))),
                 const Divider(),
                 InkWell(
-                    onTap: () => context.go('/biology'),
+                     onTap: () {},
                     child: Container(
                         width: 300,
                         padding: const EdgeInsets.only(left: 20),
                         margin: const EdgeInsets.only(top: 10, bottom: 10),
-                        child: const Text("BIOLOGY"))),
+                        child: const Text("SOUND WAVE & OSCILLATIONS"))),
               ],
             )
           ],

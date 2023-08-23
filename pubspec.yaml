@@ -55,6 +55,10 @@ dependencies:
   riverpod_annotation: ^2.1.1
   pluto_menu_bar: ^3.0.1
   logger: ^1.4.0
+  hive_flutter: ^1.1.0
+  url_strategy: ^0.2.0
+  hooks_riverpod: ^2.3.8
+  url_launcher: ^6.1.12
 
 dev_dependencies:
   flutter_test:

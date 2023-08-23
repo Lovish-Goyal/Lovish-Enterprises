@@ -32,6 +32,7 @@ class EnggLabEquipmentsView extends StatelessWidget {
                       ),
                     ],
                   )),
+                  MediaQuery.of(context).size.width > 860 ? 
               const Row(
                 children: [
                   VerticalDivider(
@@ -39,7 +40,7 @@ class EnggLabEquipmentsView extends StatelessWidget {
                   ),
                   Side(),
                 ],
-              ),
+              ):const Text("")
             ],
           ),
         ),
@@ -80,92 +81,108 @@ class Side extends StatelessWidget {
                   height: 5,
                 ),
                 InkWell(
-                    onTap: () => context.go('/dailyequipment'),
+                    onTap: () {},
                     child: Container(
                         width: 300,
                         padding: const EdgeInsets.only(left: 20),
                         margin: const EdgeInsets.only(top: 10, bottom: 10),
-                        child: const Text("DAIRY EQUIPMENTS"))),
+                        child: const Text("Amplifier And Oscillators"))),
                 const Divider(),
                 InkWell(
-                    onTap: () => context.go('/physics'),
+                    onTap: () {},
                     child: Container(
                         width: 300,
                         padding: const EdgeInsets.only(left: 20),
                         margin: const EdgeInsets.only(top: 10, bottom: 10),
-                        child: const Text("PHYSICS"))),
+                        child: const Text("Analog Electronics"))),
                 const Divider(),
                 InkWell(
-                    onTap: () => context.go('/biology'),
+                    onTap: () {},
                     child: Container(
                         width: 300,
                         padding: const EdgeInsets.only(left: 20),
                         margin: const EdgeInsets.only(top: 10, bottom: 10),
-                        child: const Text("BIOLOGY"))),
+                        child: const Text("Basic Electronics"))),
                 const Divider(),
                 InkWell(
-                    onTap: () => context.go('/biology'),
+                    onTap: () {},
                     child: Container(
                         width: 300,
                         padding: const EdgeInsets.only(left: 20),
                         margin: const EdgeInsets.only(top: 10, bottom: 10),
-                        child: const Text("BIOLOGY"))),
+                        child: const Text("BreadBoard Trainers"))),
                 const Divider(),
                 InkWell(
-                    onTap: () => context.go('/biology'),
+                    onTap: () {},
                     child: Container(
                         width: 300,
                         padding: const EdgeInsets.only(left: 20),
                         margin: const EdgeInsets.only(top: 10, bottom: 10),
-                        child: const Text("BIOLOGY"))),
+                        child: const Text("Communication Lab"))),
                 const Divider(),
                 InkWell(
-                    onTap: () => context.go('/biology'),
+                    onTap: () {},
                     child: Container(
                         width: 300,
                         padding: const EdgeInsets.only(left: 20),
                         margin: const EdgeInsets.only(top: 10, bottom: 10),
-                        child: const Text("BIOLOGY"))),
+                        child: const Text("Consumer Electronics"))),
                 const Divider(),
                 InkWell(
-                    onTap: () => context.go('/biology'),
+                    onTap: () {},
                     child: Container(
                         width: 300,
                         padding: const EdgeInsets.only(left: 20),
                         margin: const EdgeInsets.only(top: 10, bottom: 10),
-                        child: const Text("BIOLOGY"))),
+                        child: const Text("Control Lab"))),
                 const Divider(),
                 InkWell(
-                    onTap: () => context.go('/biology'),
+                    onTap: () {},
                     child: Container(
                         width: 300,
                         padding: const EdgeInsets.only(left: 20),
                         margin: const EdgeInsets.only(top: 10, bottom: 10),
-                        child: const Text("BIOLOGY"))),
+                        child: const Text("Digital Electronics"))),
                 const Divider(),
                 InkWell(
-                    onTap: () => context.go('/biology'),
+                    onTap: () {},
                     child: Container(
                         width: 300,
                         padding: const EdgeInsets.only(left: 20),
                         margin: const EdgeInsets.only(top: 10, bottom: 10),
-                        child: const Text("BIOLOGY"))),
+                        child: const Text("Fiber Optics Trainer Kits"))),
                 const Divider(),
                 InkWell(
-                    onTap: () => context.go('/biology'),
+                    onTap: () {},
                     child: Container(
                         width: 300,
                         padding: const EdgeInsets.only(left: 20),
                         margin: const EdgeInsets.only(top: 10, bottom: 10),
-                        child: const Text("BIOLOGY"))),
+                        child: const Text("Instrumentation Lab"))),
                 const Divider(),
                 InkWell(
-                    onTap: () => context.go('/biology'),
+                    onTap: () {},
                     child: Container(
                         width: 300,
                         padding: const EdgeInsets.only(left: 20),
                         margin: const EdgeInsets.only(top: 10, bottom: 10),
-                        child: const Text("BIOLOGY"))),
+                        child: const Text("Microprocessor & Microcontroller"))),
+const Divider(),
+                InkWell(
+                    onTap: () {},
+                    child: Container(
+                        width: 300,
+                        padding: const EdgeInsets.only(left: 20),
+                        margin: const EdgeInsets.only(top: 10, bottom: 10),
+                        child: const Text("MicroWave Lab"))),
+                        const Divider(),
+                InkWell(
+                    onTap: () {},
+                    child: Container(
+                        width: 300,
+                        padding: const EdgeInsets.only(left: 20),
+                        margin: const EdgeInsets.only(top: 10, bottom: 10),
+                        child: const Text("Operational Amplifier Trainer"))),
               ],
             )
           ],

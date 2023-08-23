@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:utils_widget/utils_widget.dart';
 import 'data/env.dart';
 import 'website/router.dart';
 import 'utils/apiclient.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   ApiClient.client
       .setEndpoint(Env.endpoint)
       .setProject(Env.projectId)
       .setSelfSigned(status: true);
+
+      await Hive.initFlutter();
   runApp(
     const ProviderScope(
       child: OverlayNotification.global(

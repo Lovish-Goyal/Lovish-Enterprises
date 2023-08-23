@@ -32,19 +32,22 @@ class SurgicalInstrumentsView extends StatelessWidget {
                       ),
                     ],
                   )),
-              const Row(
-                children: [
-                  VerticalDivider(
-                    color: Colors.black,
-                  ),
-                  Side(),
-                ],
-              ),
+              MediaQuery.of(context).size.width > 860
+                  ? const Row(
+                      children: [
+                        VerticalDivider(
+                          color: Colors.black,
+                        ),
+                        Side(),
+                      ],
+                    )
+                  : Text("")
             ],
           ),
         ),
       ),
-      endDrawer: MediaQuery.of(context).size.width > 1200 ? null : const EndDrawer(),
+      endDrawer:
+          MediaQuery.of(context).size.width > 1200 ? null : const EndDrawer(),
     );
   }
 }
@@ -80,92 +83,177 @@ class Side extends StatelessWidget {
                   height: 5,
                 ),
                 InkWell(
-                    onTap: () => context.go('/dailyequipment'),
+                    onTap: () {},
                     child: Container(
                         width: 300,
                         padding: const EdgeInsets.only(left: 20),
                         margin: const EdgeInsets.only(top: 10, bottom: 10),
-                        child: const Text("DAIRY EQUIPMENTS"))),
+                        child: const Text("Anesthetic Instruments"))),
                 const Divider(),
                 InkWell(
-                    onTap: () => context.go('/physics'),
+                    onTap: () {},
                     child: Container(
                         width: 300,
                         padding: const EdgeInsets.only(left: 20),
                         margin: const EdgeInsets.only(top: 10, bottom: 10),
-                        child: const Text("PHYSICS"))),
+                        child: const Text("Dental Instrumnets"))),
                 const Divider(),
                 InkWell(
-                    onTap: () => context.go('/biology'),
+                    onTap: () {},
                     child: Container(
                         width: 300,
                         padding: const EdgeInsets.only(left: 20),
                         margin: const EdgeInsets.only(top: 10, bottom: 10),
-                        child: const Text("BIOLOGY"))),
+                        child: const Text(
+                            "ENT (Ear, Nose & Throat Instruments)"))),
                 const Divider(),
                 InkWell(
-                    onTap: () => context.go('/biology'),
+                    onTap: () {},
                     child: Container(
                         width: 300,
                         padding: const EdgeInsets.only(left: 20),
                         margin: const EdgeInsets.only(top: 10, bottom: 10),
-                        child: const Text("BIOLOGY"))),
+                        child:
+                            const Text("Gall Bladder Instruments & Trocars"))),
                 const Divider(),
                 InkWell(
-                    onTap: () => context.go('/biology'),
+                    onTap: () {},
                     child: Container(
                         width: 300,
                         padding: const EdgeInsets.only(left: 20),
                         margin: const EdgeInsets.only(top: 10, bottom: 10),
-                        child: const Text("BIOLOGY"))),
+                        child:
+                            const Text("Dressing, Tissue & Sinus Forcepts"))),
                 const Divider(),
                 InkWell(
-                    onTap: () => context.go('/biology'),
+                    onTap: () {},
                     child: Container(
                         width: 300,
                         padding: const EdgeInsets.only(left: 20),
                         margin: const EdgeInsets.only(top: 10, bottom: 10),
-                        child: const Text("BIOLOGY"))),
+                        child: const Text("Hamostatic Forceps"))),
                 const Divider(),
                 InkWell(
-                    onTap: () => context.go('/biology'),
+                    onTap: () {},
                     child: Container(
                         width: 300,
                         padding: const EdgeInsets.only(left: 20),
                         margin: const EdgeInsets.only(top: 10, bottom: 10),
-                        child: const Text("BIOLOGY"))),
+                        child: const Text("Splinter Forceps"))),
                 const Divider(),
                 InkWell(
-                    onTap: () => context.go('/biology'),
+                    onTap: () {},
                     child: Container(
                         width: 300,
                         padding: const EdgeInsets.only(left: 20),
                         margin: const EdgeInsets.only(top: 10, bottom: 10),
-                        child: const Text("BIOLOGY"))),
+                        child: const Text("Sterilizer Forceps"))),
                 const Divider(),
                 InkWell(
-                    onTap: () => context.go('/biology'),
+                    onTap: () {},
                     child: Container(
                         width: 300,
                         padding: const EdgeInsets.only(left: 20),
                         margin: const EdgeInsets.only(top: 10, bottom: 10),
-                        child: const Text("BIOLOGY"))),
+                        child: const Text("Towel and Sponge Holding Forceps"))),
                 const Divider(),
                 InkWell(
-                    onTap: () => context.go('/biology'),
+                    onTap: () {},
                     child: Container(
                         width: 300,
                         padding: const EdgeInsets.only(left: 20),
                         margin: const EdgeInsets.only(top: 10, bottom: 10),
-                        child: const Text("BIOLOGY"))),
+                        child: const Text("Hospital HolloWare"))),
                 const Divider(),
                 InkWell(
-                    onTap: () => context.go('/biology'),
+                    onTap: () {},
                     child: Container(
                         width: 300,
                         padding: const EdgeInsets.only(left: 20),
                         margin: const EdgeInsets.only(top: 10, bottom: 10),
-                        child: const Text("BIOLOGY"))),
+                        child: const Text("Needle Holder"))),
+                const Divider(),
+                InkWell(
+                    onTap: () {},
+                    child: Container(
+                        width: 300,
+                        padding: const EdgeInsets.only(left: 20),
+                        margin: const EdgeInsets.only(top: 10, bottom: 10),
+                        child: const Text("Ophthalmic"))),
+                const Divider(),
+                InkWell(
+                    onTap: () {},
+                    child: Container(
+                        width: 300,
+                        padding: const EdgeInsets.only(left: 20),
+                        margin: const EdgeInsets.only(top: 10, bottom: 10),
+                        child: const Text("Plastic Surgery Instruments"))),
+                const Divider(),
+                InkWell(
+                    onTap: () {},
+                    child: Container(
+                        width: 300,
+                        padding: const EdgeInsets.only(left: 20),
+                        margin: const EdgeInsets.only(top: 10, bottom: 10),
+                        child: const Text("Post Mortem Instruments"))),
+                const Divider(),
+                InkWell(
+                    onTap: () {},
+                    child: Container(
+                        width: 300,
+                        padding: const EdgeInsets.only(left: 20),
+                        margin: const EdgeInsets.only(top: 10, bottom: 10),
+                        child: const Text("Probe and Directors"))),
+                const Divider(),
+                InkWell(
+                    onTap: () {},
+                    child: Container(
+                        width: 300,
+                        padding: const EdgeInsets.only(left: 20),
+                        margin: const EdgeInsets.only(top: 10, bottom: 10),
+                        child: const Text("Refractor"))),
+                const Divider(),
+                InkWell(
+                    onTap: () {},
+                    child: Container(
+                        width: 300,
+                        padding: const EdgeInsets.only(left: 20),
+                        margin: const EdgeInsets.only(top: 10, bottom: 10),
+                        child: const Text(
+                            "Saws and Plaster of Paris Instruments"))),
+                const Divider(),
+                InkWell(
+                    onTap: () {},
+                    child: Container(
+                        width: 300,
+                        padding: const EdgeInsets.only(left: 20),
+                        margin: const EdgeInsets.only(top: 10, bottom: 10),
+                        child: const Text("Scissors"))),
+                const Divider(),
+                InkWell(
+                    onTap: () {},
+                    child: Container(
+                        width: 300,
+                        padding: const EdgeInsets.only(left: 20),
+                        margin: const EdgeInsets.only(top: 10, bottom: 10),
+                        child:
+                            const Text("STOMACH AND INTESTINAL INSTRUMENTS"))),
+                const Divider(),
+                InkWell(
+                    onTap: () {},
+                    child: Container(
+                        width: 300,
+                        padding: const EdgeInsets.only(left: 20),
+                        margin: const EdgeInsets.only(top: 10, bottom: 10),
+                        child: const Text("Surgical Instruments Kits"))),
+                const Divider(),
+                InkWell(
+                    onTap: () {},
+                    child: Container(
+                        width: 300,
+                        padding: const EdgeInsets.only(left: 20),
+                        margin: const EdgeInsets.only(top: 10, bottom: 10),
+                        child: const Text("Suture Instruments"))),
               ],
             )
           ],

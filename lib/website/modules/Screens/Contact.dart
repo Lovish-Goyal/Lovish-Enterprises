@@ -60,8 +60,7 @@ class _ContactState extends State<Contact> {
                         child: const Center(
                           child: Text(
                             "Contact Details",
-                            style:
-                                TextStyle(fontSize: 30, color: Colors.white),
+                            style: TextStyle(fontSize: 30, color: Colors.white),
                           ),
                         ),
                       ),
@@ -92,8 +91,7 @@ class _ContactState extends State<Contact> {
                           children: [
                             Text("Phone:",
                                 style: TextStyle(
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.bold)),
+                                    fontSize: 20, fontWeight: FontWeight.bold)),
                             SizedBox(
                               width: 30,
                             ),
@@ -110,8 +108,7 @@ class _ContactState extends State<Contact> {
                           children: [
                             Text("Address",
                                 style: TextStyle(
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.bold)),
+                                    fontSize: 20, fontWeight: FontWeight.bold)),
                             SizedBox(
                               width: 20,
                             ),
@@ -154,7 +151,35 @@ class _ContactState extends State<Contact> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Container(
-                                margin: const EdgeInsets.only(top: 30, left: 30),
+                                margin:
+                                    const EdgeInsets.only(top: 30, left: 30),
+                                child: const Text(
+                                  "Name",
+                                  style: TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold),
+                                )),
+                            Container(
+                              margin: const EdgeInsets.only(
+                                  top: 10, left: 20, bottom: 10, right: 50),
+                              child: TextFormField(
+                                 validator: (value) {
+                                  if (value!.isEmpty) {
+                                    return 'Please enter your name';
+                                  }
+                                  return null;
+                                },
+                                decoration: InputDecoration(
+                                  contentPadding: const EdgeInsets.all(16.0),
+                                  hintText: "Your name",
+                                  filled: true,
+                                  fillColor: Colors.grey.withOpacity(0.1),
+                                ),
+                              ),
+                            ),
+                            Container(
+                                margin:
+                                    const EdgeInsets.only(top: 30, left: 30),
                                 child: const Text(
                                   "Email Address:",
                                   style: TextStyle(
@@ -166,7 +191,9 @@ class _ContactState extends State<Contact> {
                                   top: 10, left: 20, bottom: 10, right: 50),
                               child: TextFormField(
                                 validator: (value) {
-                                  if (value!.isValidEmail == false) {
+                                  if (value!.isEmpty) {
+                                    return 'Please enter your email';
+                                  } else if (value.isValidEmail == false) {
                                     return "Please enter a valid email address";
                                   }
                                   return null;
@@ -174,34 +201,15 @@ class _ContactState extends State<Contact> {
                                 decoration: InputDecoration(
                                   contentPadding: const EdgeInsets.all(16.0),
                                   hintText:
-                                      "Please enter a valid email address",
+                                      "Enter your email address",
                                   filled: true,
                                   fillColor: Colors.grey.withOpacity(0.1),
                                 ),
                               ),
                             ),
                             Container(
-                                margin: const EdgeInsets.only(top: 30, left: 30),
-                                child: const Text(
-                                  "Email Name",
-                                  style: TextStyle(
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.bold),
-                                )),
-                            Container(
-                              margin: const EdgeInsets.only(
-                                  top: 10, left: 20, bottom: 10, right: 50),
-                              child: TextFormField(
-                                decoration: InputDecoration(
-                                  contentPadding: const EdgeInsets.all(16.0),
-                                  hintText: "Please Enter Your Name",
-                                  filled: true,
-                                  fillColor: Colors.grey.withOpacity(0.1),
-                                ),
-                              ),
-                            ),
-                            Container(
-                                margin: const EdgeInsets.only(top: 30, left: 30),
+                                margin:
+                                    const EdgeInsets.only(top: 30, left: 30),
                                 child: const Text(
                                   "Mobile No.",
                                   style: TextStyle(
@@ -212,6 +220,14 @@ class _ContactState extends State<Contact> {
                               margin: const EdgeInsets.only(
                                   top: 10, left: 20, bottom: 10, right: 50),
                               child: TextFormField(
+                                 validator: (value) {
+                                  if (value!.isEmpty) {
+                                    return 'Please enter your Mobile';
+                                  } else if (value.isValidPhone == false) {
+                                    return "Please enter a valid Mobile Number ";
+                                  }
+                                  return null;
+                                },
                                 keyboardType: TextInputType.number,
                                 inputFormatters: <TextInputFormatter>[
                                   FilteringTextInputFormatter.allow(
@@ -220,15 +236,15 @@ class _ContactState extends State<Contact> {
                                 ],
                                 decoration: InputDecoration(
                                   contentPadding: const EdgeInsets.all(16.0),
-                                  hintText:
-                                      "Please enter a valid Phone number",
+                                  hintText: "(+91) Phone Number",
                                   filled: true,
                                   fillColor: Colors.grey.withOpacity(0.1),
                                 ),
                               ),
                             ),
                             Container(
-                                margin: const EdgeInsets.only(top: 30, left: 30),
+                                margin:
+                                    const EdgeInsets.only(top: 30, left: 30),
                                 child: const Text(
                                   "Message",
                                   style: TextStyle(
@@ -239,6 +255,12 @@ class _ContactState extends State<Contact> {
                               margin: const EdgeInsets.only(
                                   top: 10, left: 20, bottom: 10, right: 50),
                               child: TextFormField(
+                                 validator: (value) {
+                                  if (value!.isEmpty) {
+                                    return 'Please enter your Message';
+                                  }
+                                  return null;
+                                },
                                 maxLines: 10,
                                 minLines: 5,
                                 decoration: InputDecoration(
@@ -257,26 +279,21 @@ class _ContactState extends State<Contact> {
                                   height: 40,
                                   child: ElevatedButton(
                                       onPressed: () {
-                                        if (_formKey.currentState!
-                                            .validate()) {
+                                        if (_formKey.currentState!.validate()) {
                                           showDialog(
                                               context: context,
-                                              builder:
-                                                  (BuildContext context) {
+                                              builder: (BuildContext context) {
                                                 return AlertDialog(
-                                                  title:
-                                                      const Text("Success"),
+                                                  title: const Text("Success"),
                                                   content: const Text(
                                                       "Form Submitted Successfully"),
                                                   actions: [
                                                     ElevatedButton(
                                                         onPressed: () {
-                                                          Navigator.of(
-                                                                  context)
+                                                          Navigator.of(context)
                                                               .pop();
                                                         },
-                                                        child:
-                                                            const Text("OK"))
+                                                        child: const Text("OK"))
                                                   ],
                                                 );
                                               });
@@ -294,10 +311,12 @@ class _ContactState extends State<Contact> {
           ],
         ),
       ),
-      endDrawer: MediaQuery.of(context).size.width > 1200 ? null : const EndDrawer(),
+      endDrawer:
+          MediaQuery.of(context).size.width > 1200 ? null : const EndDrawer(),
     );
   }
 }
+
 
 extension extString on String {
   bool get isValidEmail {
@@ -318,11 +337,11 @@ extension extString on String {
   }
 
   bool get isNotNull {
-    return this!= 0;
+    return this != 0;
   }
 
   bool get isValidPhone {
-    final phoneRegExp = RegExp(r"^\+?0[0-9]{10}$");
+    final phoneRegExp = RegExp(r"^\+?[0-9]{10}$");
     return phoneRegExp.hasMatch(this);
   }
 

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 import 'package:lovish_enterprises/website/bottom.dart';
 import 'package:lovish_enterprises/website/modules/carsouls/biology.dart';
@@ -14,6 +15,7 @@ import 'package:lovish_enterprises/website/modules/carsouls/surgical_instruments
 import 'package:lovish_enterprises/widgets/appbar.dart';
 import 'package:lovish_enterprises/widgets/drawer.dart';
 import 'package:lovish_enterprises/widgets/dropdown.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../../../widgets/carsoul.dart';
 import '../carsouls/bio_model.dart';
 import '../../../widgets/HardScreen.dart';
@@ -26,6 +28,27 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
+
+ 
+_launchWhatsapp() async {
+  var url = Uri.parse("https://wa.me/8607605196?text=Hey buddy, try this super cool new app!");
+    var whatsapp = "+918607605196";
+    var whatsappAndroid =Uri.parse("whatsapp://send?phone=$whatsapp&text=hello");
+    if (await canLaunchUrl(whatsappAndroid)) {
+        await launchUrl(whatsappAndroid);
+    } 
+    else if (await canLaunchUrl(url)) {
+        await launchUrl(url);
+    } 
+    else {
+        ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text("WhatsApp is not installed on the device"),
+        ),
+      );
+    }
+}
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -427,6 +450,13 @@ class _HomeViewState extends State<HomeView> {
           ],
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(5))
+     ),
+        backgroundColor: Colors.green.shade600,
+        onPressed: _launchWhatsapp,
+        child: const FaIcon(FontAwesomeIcons.whatsapp),),
       endDrawer: MediaQuery.of(context).size.width > 1200 ? null : const EndDrawer(),
     );
   }

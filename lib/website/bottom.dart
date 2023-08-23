@@ -3,12 +3,76 @@ import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
 import 'package:go_router/go_router.dart';
 import 'package:lovish_enterprises/widgets/buttons.dart';
 import 'package:responsive_grid/responsive_grid.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Bottom extends StatelessWidget {
   const Bottom({super.key});
 
+
   @override
   Widget build(BuildContext context) {
+
+    _launchWhatsapp() async {
+  var url = Uri.parse("https://wa.me/8607605196?text=Hey buddy, try this super cool new app!");
+    var whatsapp = "+918607605196";
+    var whatsappAndroid =Uri.parse("whatsapp://send?phone=$whatsapp&text=hello");
+    if (await canLaunchUrl(whatsappAndroid)) {
+        await launchUrl(whatsappAndroid);
+    } 
+    else if (await canLaunchUrl(url)) {
+        await launchUrl(url);
+    } 
+    else {
+        ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text("WhatsApp is not installed on the device"),
+        ),
+      );
+    }
+}
+
+ _launchInstagram() async {
+  var url = Uri.parse("https://www.instagram.com/lovish_differentthinker");
+    if (await canLaunchUrl(url)) {
+        await launchUrl(url);
+    }
+    else {
+        ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text("WhatsApp is not installed on the device"),
+        ),
+      );
+    }
+}
+
+_launchfaceboook() async {
+  var url = Uri.parse("https://m.me/100077455695981");
+    if (await canLaunchUrl(url)) {
+        await launchUrl(url);
+    }
+    else {
+        ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text("WhatsApp is not installed on the device"),
+        ),
+      );
+    }
+}
+
+_launchTwitter() async {
+  var url = Uri.parse("https://twitter.com/");
+    if (await canLaunchUrl(url)) {
+        await launchUrl(url);
+    }
+    else {
+        ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text("WhatsApp is not installed on the device"),
+        ),
+      );
+    }
+}
+
    // TextEditingController _searchController = TextEditingController();
     return Container(
       color: Colors.black.withOpacity(.8),
@@ -268,19 +332,19 @@ class Bottom extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         IconButton(
-                          onPressed: () {},
+                          onPressed: _launchWhatsapp,
                            icon: const Icon(PhosphorIcons.whatsapp_logo,
                            color: Colors.white,)),
                       IconButton(
-                          onPressed: () {},
+                          onPressed: _launchInstagram,
                            icon: const Icon(PhosphorIcons.instagram_logo,
                            color: Colors.white,)),
                       IconButton(
-                          onPressed: () {},
+                          onPressed: _launchfaceboook,
                            icon: const Icon(PhosphorIcons.facebook_logo,
                            color: Colors.white,)),
                       IconButton(
-                          onPressed: () {},
+                          onPressed: _launchTwitter,
                            icon: const Icon(PhosphorIcons.twitter_logo,
                            color: Colors.white,))
                       ],

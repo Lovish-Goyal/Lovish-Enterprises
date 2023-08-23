@@ -32,6 +32,7 @@ class MicroscopeView extends StatelessWidget {
                       ),
                     ],
                   )),
+                   MediaQuery.of(context).size.width > 860 ? 
               const Row(
                 children: [
                   VerticalDivider(
@@ -39,7 +40,7 @@ class MicroscopeView extends StatelessWidget {
                   ),
                   Side(),
                 ],
-              ),
+              ) : const Text("")
             ],
           ),
         ),
@@ -80,92 +81,20 @@ class Side extends StatelessWidget {
                   height: 5,
                 ),
                 InkWell(
-                    onTap: () => context.go('/dailyequipment'),
+                    onTap: () {},
                     child: Container(
                         width: 300,
                         padding: const EdgeInsets.only(left: 20),
                         margin: const EdgeInsets.only(top: 10, bottom: 10),
-                        child: const Text("DAIRY EQUIPMENTS"))),
+                        child: const Text("MicroScope"))),
                 const Divider(),
                 InkWell(
-                    onTap: () => context.go('/physics'),
+                    onTap: () {},
                     child: Container(
                         width: 300,
                         padding: const EdgeInsets.only(left: 20),
                         margin: const EdgeInsets.only(top: 10, bottom: 10),
-                        child: const Text("PHYSICS"))),
-                const Divider(),
-                InkWell(
-                    onTap: () => context.go('/biology'),
-                    child: Container(
-                        width: 300,
-                        padding: const EdgeInsets.only(left: 20),
-                        margin: const EdgeInsets.only(top: 10, bottom: 10),
-                        child: const Text("BIOLOGY"))),
-                const Divider(),
-                InkWell(
-                    onTap: () => context.go('/biology'),
-                    child: Container(
-                        width: 300,
-                        padding: const EdgeInsets.only(left: 20),
-                        margin: const EdgeInsets.only(top: 10, bottom: 10),
-                        child: const Text("BIOLOGY"))),
-                const Divider(),
-                InkWell(
-                    onTap: () => context.go('/biology'),
-                    child: Container(
-                        width: 300,
-                        padding: const EdgeInsets.only(left: 20),
-                        margin: const EdgeInsets.only(top: 10, bottom: 10),
-                        child: const Text("BIOLOGY"))),
-                const Divider(),
-                InkWell(
-                    onTap: () => context.go('/biology'),
-                    child: Container(
-                        width: 300,
-                        padding: const EdgeInsets.only(left: 20),
-                        margin: const EdgeInsets.only(top: 10, bottom: 10),
-                        child: const Text("BIOLOGY"))),
-                const Divider(),
-                InkWell(
-                    onTap: () => context.go('/biology'),
-                    child: Container(
-                        width: 300,
-                        padding: const EdgeInsets.only(left: 20),
-                        margin: const EdgeInsets.only(top: 10, bottom: 10),
-                        child: const Text("BIOLOGY"))),
-                const Divider(),
-                InkWell(
-                    onTap: () => context.go('/biology'),
-                    child: Container(
-                        width: 300,
-                        padding: const EdgeInsets.only(left: 20),
-                        margin: const EdgeInsets.only(top: 10, bottom: 10),
-                        child: const Text("BIOLOGY"))),
-                const Divider(),
-                InkWell(
-                    onTap: () => context.go('/biology'),
-                    child: Container(
-                        width: 300,
-                        padding: const EdgeInsets.only(left: 20),
-                        margin: const EdgeInsets.only(top: 10, bottom: 10),
-                        child: const Text("BIOLOGY"))),
-                const Divider(),
-                InkWell(
-                    onTap: () => context.go('/biology'),
-                    child: Container(
-                        width: 300,
-                        padding: const EdgeInsets.only(left: 20),
-                        margin: const EdgeInsets.only(top: 10, bottom: 10),
-                        child: const Text("BIOLOGY"))),
-                const Divider(),
-                InkWell(
-                    onTap: () => context.go('/biology'),
-                    child: Container(
-                        width: 300,
-                        padding: const EdgeInsets.only(left: 20),
-                        margin: const EdgeInsets.only(top: 10, bottom: 10),
-                        child: const Text("BIOLOGY"))),
+                        child: const Text("Digital MicroScope"))),
               ],
             )
           ],

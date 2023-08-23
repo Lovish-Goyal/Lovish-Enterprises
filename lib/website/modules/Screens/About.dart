@@ -18,15 +18,9 @@ class About extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            ResponsiveGridRow(children: [
-              ResponsiveGridCol(
-                 xl: 6,
-                  lg: 6,
-                  md: 12,
-                  sm: 12,
-                  xs: 12,
-                child: Container(
-                  margin: const EdgeInsets.symmetric(horizontal: 120,vertical: 20),
+            Container(
+              width: 300,
+                  margin: const EdgeInsets.symmetric(vertical: 20),
                   padding: const EdgeInsets.all(20),
                   decoration: BoxDecoration(
                       border: Border.all(color: Colors.cyan),
@@ -41,14 +35,7 @@ class About extends StatelessWidget {
                     ),
                   ),
                 ),
-              ),
-              ResponsiveGridCol(
-                 xl: 6,
-                  lg: 6,
-                  md: 12,
-                  sm: 12,
-                  xs: 12,
-                child: Container(
+              Container(
                   margin: const EdgeInsets.symmetric(vertical: 40,horizontal: 40),
                   child: const Text(
                         "Lovish Enterprises - Trusted Company",
@@ -58,8 +45,6 @@ class About extends StatelessWidget {
                             color: Colors.grey),
                       ),
                 ),
-                  ),
-            ]),
             const SizedBox(
               height: 20,
             ),
@@ -118,8 +103,8 @@ class About extends StatelessWidget {
                 xs: 12,
                 child: Container(
                   margin: const EdgeInsets.only(left: 50),
-                  child: Image.network(
-                    "https://www.vipnumbershop.com/static/media/girl-about.3cb0c04297c9f42a45e6.png",
+                  child: Image.asset(
+                    "images/about/about1.png",
                     height: 400,
                   ),
                 ),
@@ -160,8 +145,8 @@ class About extends StatelessWidget {
                 md: 12,
                 sm: 12,
                 xs: 12,
-                child: Image.network(
-                  "https://www.vipnumbershop.com/static/media/about-boy.9a96777a1edb4c3021df.png",
+                child: Image.asset(
+                  "images/about/about2.png",
                   height: 400,
                 ),
               ),
