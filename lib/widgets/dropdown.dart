@@ -10,15 +10,21 @@ class ProductMenu extends StatefulWidget {
 class _ProductMenuState extends State<ProductMenu> {
   List<DropdownMenuItem<String>> get dropdownItems {
     List<DropdownMenuItem<String>> menuItems = [
-      const DropdownMenuItem(value: "All Categories",child: Text("All Categories"),),
-      const DropdownMenuItem(value: "DAIRY EQUIPMENTS", child: Text("DAIRY EQUIPMENTS")),
+      const DropdownMenuItem(
+        value: "All Categories",
+        child: Text("All Categories"),
+      ),
+      const DropdownMenuItem(
+          value: "DAIRY EQUIPMENTS", child: Text("DAIRY EQUIPMENTS")),
       const DropdownMenuItem(value: "PHYSICS", child: Text("PHYSICS")),
       const DropdownMenuItem(value: "BIOLOGY", child: Text("BIOLOGY")),
       const DropdownMenuItem(
           value: "LABORATORY PLASTIC WARE",
           child: Text("LABORATORY PLASTIC WARE")),
-      const DropdownMenuItem(value: "LABORATORY GLASS WARE", child: Text("LABORATORY GLASS WARE")),
-      const DropdownMenuItem(value: "LABORATORY EQUIPMENT", child: Text("LABORATORY EQUIPMENT")),
+      const DropdownMenuItem(
+          value: "LABORATORY GLASS WARE", child: Text("LABORATORY GLASS WARE")),
+      const DropdownMenuItem(
+          value: "LABORATORY EQUIPMENT", child: Text("LABORATORY EQUIPMENT")),
       const DropdownMenuItem(value: "MICROSCOPE", child: Text("MICROSCOPE")),
       const DropdownMenuItem(
           value: "BIOLOGICAL MODELS (FIBER AND PLASTIC)",
@@ -29,7 +35,8 @@ class _ProductMenuState extends State<ProductMenu> {
       const DropdownMenuItem(
           value: "HOSPITAL FURNITURE AND EQUIPMENT",
           child: Text("HOSPITAL FURNITURE AND EQUIPMENT")),
-      const DropdownMenuItem(value: "SURGICAL INSTRUMENTS", child: Text("SURGICAL INSTRUMENTS")),
+      const DropdownMenuItem(
+          value: "SURGICAL INSTRUMENTS", child: Text("SURGICAL INSTRUMENTS")),
     ];
     return menuItems;
   }
@@ -40,7 +47,8 @@ class _ProductMenuState extends State<ProductMenu> {
   Widget build(BuildContext context) {
     return DropdownButtonFormField(
         decoration: InputDecoration(
-          border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+          border: OutlineInputBorder(
+              borderRadius: BorderRadius.all(Radius.circular(10))),
           filled: true,
           fillColor: Colors.cyan[700],
         ),

@@ -13,7 +13,7 @@ void main() async {
       .setProject(Env.projectId)
       .setSelfSigned(status: true);
 
-      await Hive.initFlutter();
+  await Hive.initFlutter();
   runApp(
     const ProviderScope(
       child: OverlayNotification.global(

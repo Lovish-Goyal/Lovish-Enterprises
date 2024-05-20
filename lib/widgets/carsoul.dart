@@ -10,7 +10,7 @@ class Carsoul extends StatelessWidget {
       items: [
         Container(
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(8.0),
+            borderRadius: BorderRadius.all(Radius.circular(10)),
             image: const DecorationImage(
               image: AssetImage("images/image1.jpg"),
               fit: BoxFit.fill,
@@ -21,7 +21,7 @@ class Carsoul extends StatelessWidget {
         //2nd Image of Slider
         Container(
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(8.0),
+            borderRadius: BorderRadius.all(Radius.circular(10)),
             image: const DecorationImage(
               image: AssetImage("images/image2.jpg"),
               fit: BoxFit.fill,
@@ -32,7 +32,7 @@ class Carsoul extends StatelessWidget {
         //3rd Image of Slider
         Container(
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(8.0),
+            borderRadius: BorderRadius.all(Radius.circular(10)),
             image: const DecorationImage(
               image: AssetImage("images/image3.jpg"),
               fit: BoxFit.fill,
@@ -43,7 +43,7 @@ class Carsoul extends StatelessWidget {
         //4th Image of Slider
         Container(
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(8.0),
+            borderRadius: BorderRadius.all(Radius.circular(10)),
             image: const DecorationImage(
               image: AssetImage("images/image4.jpg"),
               fit: BoxFit.fill,
