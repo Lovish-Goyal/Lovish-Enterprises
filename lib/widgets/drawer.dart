@@ -17,15 +17,8 @@ class EndDrawer extends StatelessWidget {
             decoration: BoxDecoration(
                 color: Colors.redAccent,
                 image: DecorationImage(
-                    image: AssetImage(
-                        "images/image1.jpg"),
-                    fit: BoxFit.cover)),
-            child: Text(
-              'My Drawer Header',
-              style: TextStyle(
-                color: Colors.black,
-              ),
-            ),
+                    image: AssetImage("images/image1.jpg"), fit: BoxFit.cover)),
+            child: Text(""),
           ),
           ListTile(
             onTap: () => context.go('/'),
@@ -40,13 +33,13 @@ class EndDrawer extends StatelessWidget {
             title: const Text('Products'),
           ),
           const Divider(),
-           ListTile(
+          ListTile(
             onTap: () => context.go('/about'),
             leading: const Icon(Icons.person),
             title: const Text('About'),
           ),
           const Divider(),
-           ListTile(
+          ListTile(
             onTap: () => context.go('/contact'),
             leading: const Icon(Icons.contact_page),
             title: const Text('Contact'),
@@ -70,7 +63,7 @@ class EndDrawer extends StatelessWidget {
               },
               leading: const Icon(Icons.close),
               title: const Text("Close Drawer")),
-              const Divider(),
+          const Divider(),
         ],
       ),
     );

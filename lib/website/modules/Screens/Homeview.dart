@@ -16,6 +16,7 @@ import 'package:lovish_enterprises/widgets/appbar.dart';
 import 'package:lovish_enterprises/widgets/drawer.dart';
 import 'package:lovish_enterprises/widgets/dropdown.dart';
 import 'package:url_launcher/url_launcher.dart';
+import '../../../utils/drawrerContainer.dart';
 import '../../../widgets/carsoul.dart';
 import '../carsouls/bio_model.dart';
 import '../../../widgets/HardScreen.dart';
@@ -28,26 +29,27 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
+  // Whatsapp Messages Logic
+  int count = 1;
 
- 
-_launchWhatsapp() async {
-  var url = Uri.parse("https://wa.me/8607605196?text=Hey buddy, try this super cool new app!");
+  _launchWhatsapp() async {
+    var url = Uri.parse(
+        "https://wa.me/8607605196?text=Hey buddy, try this super cool new app!");
     var whatsapp = "+918607605196";
-    var whatsappAndroid =Uri.parse("whatsapp://send?phone=$whatsapp&text=hello");
+    var whatsappAndroid =
+        Uri.parse("whatsapp://send?phone=$whatsapp&text=hello");
     if (await canLaunchUrl(whatsappAndroid)) {
-        await launchUrl(whatsappAndroid);
-    } 
-    else if (await canLaunchUrl(url)) {
-        await launchUrl(url);
-    } 
-    else {
-        ScaffoldMessenger.of(context).showSnackBar(
+      await launchUrl(whatsappAndroid);
+    } else if (await canLaunchUrl(url)) {
+      await launchUrl(url);
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
           content: Text("WhatsApp is not installed on the device"),
         ),
       );
     }
-}
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -55,194 +57,156 @@ _launchWhatsapp() async {
       appBar: AppBar(
         toolbarHeight: 80,
         backgroundColor: Colors.cyan[700],
-        title: const AppbarView(),
+        title: AppbarView(),
       ),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            if (MediaQuery.of(context).size.width < 1000)
-              Container(
-                margin: const EdgeInsets.symmetric(horizontal: 20),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(
-                        margin: const EdgeInsets.all(10),
-                        width: 380,
-                        child: const ProductMenu()),
-                    MediaQuery.of(context).size.width > 700
-                        ? InkWell(
-                            borderRadius: BorderRadius.circular(30),
-                            onTap: () => context.go('/search'),
-                            child: Container(
-                              padding: const EdgeInsets.all(10),
-                              width: 240,
-                              decoration: BoxDecoration(
-                                border: Border.all(),
-                                borderRadius: BorderRadius.circular(30),
-                              ),
-                              child: const Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text("Search..."),
-                                  Icon(Icons.search),
-                                ],
-                              ),
-                            ),
-                          )
-                        : Container(
-                            decoration: BoxDecoration(
-                                border: Border.all(),
-                                borderRadius: BorderRadius.circular(100)),
-                            child: IconButton(
-                                onPressed: () => context.push('/search'),
-                                icon: const Icon(Icons.search)))
-                  ],
-                ),
-              ),
+            // if (MediaQuery.of(context).size.width < 1000)
+            //   Container(
+            //     margin: const EdgeInsets.symmetric(horizontal: 20),
+            //     child: Row(
+            //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            //       children: [
+            //         Container(
+            //             margin: const EdgeInsets.all(10),
+            //             width: 380,
+            //             child: const ProductMenu()),
+            //         MediaQuery.of(context).size.width > 700
+            //             ? InkWell(
+            //                 borderRadius: BorderRadius.circular(30),
+            //                 onTap: () => context.go('/search'),
+            //                 child: Container(
+            //                   padding: const EdgeInsets.all(10),
+            //                   width: 240,
+            //                   decoration: BoxDecoration(
+            //                     border: Border.all(),
+            //                     borderRadius: BorderRadius.circular(30),
+            //                   ),
+            //                   child: const Row(
+            //                     mainAxisAlignment:
+            //                         MainAxisAlignment.spaceBetween,
+            //                     children: [
+            //                       Text("Search..."),
+            //                       Icon(Icons.search),
+            //                     ],
+            //                   ),
+            //                 ),
+            //               )
+            //             : Container(
+            //                 decoration: BoxDecoration(
+            //                     border: Border.all(),
+            //                     borderRadius: BorderRadius.circular(100)),
+            //                 child: IconButton(
+            //                     onPressed: () => context.push('/search'),
+            //                     icon: const Icon(Icons.search)))
+            //       ],
+            //     ),
+            //   ),
             Container(
-              color: Colors.white,
+              margin: EdgeInsets.only(top: 20),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   if (MediaQuery.of(context).size.width > 1000)
                     Container(
-                        width: 300,
-                        margin: const EdgeInsets.only(left: 20, top: 20),
-                        decoration: BoxDecoration(border: Border.all()),
-                        child: Column(
-                          children: [
-                            Container(
-                              height: 50,
-                              color: Colors.cyan[700],
-                              child: const Row(
+                      width: 300,
+                      margin: const EdgeInsets.only(left: 20, top: 20),
+                      decoration: BoxDecoration(
+                          border: Border(
+                        top: BorderSide(color: Colors.grey, width: 1.0),
+                        left: BorderSide(color: Colors.grey, width: 1.0),
+                        right: BorderSide(color: Colors.grey, width: 1.0),
+                      )),
+                      child: Column(
+                        children: [
+                          Container(
+                            height: 50,
+                            color: Colors.cyan[700],
+                            child: const Center(
+                              child: Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  Icon(Icons.list_alt),
-                                  Text("All Categories")
+                                  Icon(
+                                    Icons.list_alt,
+                                    color: Colors.white,
+                                  ),
+                                  Text(
+                                    "All Categories",
+                                    style: TextStyle(color: Colors.white),
+                                  ),
                                 ],
                               ),
                             ),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                InkWell(
-                                    onTap: () => context.go('/dailyequipment'),
-                                    child: Container(
-                                        width: 300,
-                                        margin:
-                                            const EdgeInsets.only(top: 10, bottom: 5),
-                                        child: const Center(
-                                            child: Text("DAIRY EQUIPMENTS")))),
-                                const Divider(),
-                                InkWell(
-                                    onTap: () => context.go('/physics'),
-                                    child: Container(
-                                        width: 300,
-                                        margin:
-                                            const EdgeInsets.only(top: 10, bottom: 5),
-                                        child: const Center(child: Text("PHYSICS")))),
-                                const Divider(),
-                                InkWell(
-                                    onTap: () => context.go('/biology'),
-                                    child: Container(
-                                        width: 300,
-                                        margin:
-                                            const EdgeInsets.only(top: 10, bottom: 5),
-                                        child: const Center(child: Text("BIOLOGY")))),
-                                const Divider(),
-                                InkWell(
-                                    onTap: () => context.go('/plasticware'),
-                                    child: Container(
-                                        width: 300,
-                                        margin:
-                                            const EdgeInsets.only(top: 10, bottom: 5),
-                                        child: const Center(
-                                            child: Text(
-                                                "LABORATORY PLASTIC WARE")))),
-                                const Divider(),
-                                InkWell(
-                                    onTap: () => context.go('/glassware'),
-                                    child: Container(
-                                        width: 300,
-                                        margin:
-                                            const EdgeInsets.only(top: 10, bottom: 5),
-                                        child: const Center(
-                                            child: Text(
-                                                "LABORATORY GLASS WARE")))),
-                                const Divider(),
-                                InkWell(
-                                    onTap: () => context.go('/labequipment'),
-                                    child: Container(
-                                        width: 300,
-                                        margin:
-                                            const EdgeInsets.only(top: 10, bottom: 5),
-                                        child: const Center(
-                                            child:
-                                                Text("LABORATORY EQUIPMENT")))),
-                                const Divider(),
-                                InkWell(
-                                    onTap: () => context.go('/microscope'),
-                                    child: Container(
-                                        width: 300,
-                                        margin:
-                                            const EdgeInsets.only(top: 10, bottom: 5),
-                                        child:
-                                            const Center(child: Text("MICROSCOPE")))),
-                                const Divider(),
-                                InkWell(
-                                    onTap: () => context.go('/biomodels'),
-                                    child: Container(
-                                        width: 300,
-                                        margin:
-                                            const EdgeInsets.only(top: 10, bottom: 5),
-                                        child: const Center(
-                                            child: Text(
-                                                "BIOLOGICAL MODELS (FIBER AND PLASTIC)")))),
-                                const Divider(),
-                                InkWell(
-                                    onTap: () => context.go('/engglab'),
-                                    child: Container(
-                                        width: 300,
-                                        margin:
-                                            const EdgeInsets.only(top: 10, bottom: 5),
-                                        child: const Center(
-                                            child: Text(
-                                                "ENGINEERING LAB INSTRUMENTS")))),
-                                const Divider(),
-                                InkWell(
-                                    onTap: () =>
-                                        context.go('/hospitalinstruments'),
-                                    child: Container(
-                                        width: 300,
-                                        margin:
-                                            const EdgeInsets.only(top: 10, bottom: 5),
-                                        child: const Center(
-                                            child: Text(
-                                                "HOSPITAL FURNITURE AND EQUIPMENT")))),
-                                const Divider(),
-                                InkWell(
-                                    onTap: () =>
-                                        context.go('/surgicalinstruments'),
-                                    child: Container(
-                                        width: 300,
-                                        margin: const EdgeInsets.only(
-                                            top: 10, bottom: 10),
-                                        child: const Center(
-                                            child:
-                                                Text("SURGICAL INSTRUMENTS")))),
-                              ],
-                            )
-                          ],
-                        )),
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              ...[
+                                {
+                                  "route": "/dailyequipment",
+                                  "text": "DAIRY EQUIPMENTS"
+                                },
+                                {"route": "/physics", "text": "PHYSICS"},
+                                {"route": "/biology", "text": "BIOLOGY"},
+                                {
+                                  "route": "/plasticware",
+                                  "text": "LABORATORY PLASTIC WARE"
+                                },
+                                {
+                                  "route": "/glassware",
+                                  "text": "LABORATORY GLASS WARE"
+                                },
+                                {
+                                  "route": "/labequipment",
+                                  "text": "LABORATORY EQUIPMENT"
+                                },
+                                {"route": "/microscope", "text": "MICROSCOPE"},
+                                {
+                                  "route": "/biomodels",
+                                  "text": "BIOLOGICAL MODELS"
+                                },
+                                {
+                                  "route": "/engglab",
+                                  "text": "ENGINEERING LAB INSTRUMENTS"
+                                },
+                                {
+                                  "route": "/hospitalinstruments",
+                                  "text": "HOSPITAL FURNITURE AND EQUIPMENT"
+                                },
+                                {
+                                  "route": "/surgicalinstruments",
+                                  "text": "SURGICAL INSTRUMENTS"
+                                },
+                              ].map((item) {
+                                return Column(
+                                  children: [
+                                    Container(
+                                      decoration: BoxDecoration(
+                                          border: BorderDirectional(
+                                              bottom: BorderSide(
+                                                  color: Colors.grey))),
+                                      child: DrawerContainer(
+                                        ontap: () => context
+                                            .go(item["route"].toString()),
+                                        text: item["text"].toString(),
+                                      ),
+                                    ),
+                                  ],
+                                );
+                              }).toList(),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
                   Container(
                     margin: const EdgeInsets.only(top: 15),
-                    width: (MediaQuery.of(context).size.width > 1000)
+                    width: MediaQuery.of(context).size.width > 1000
                         ? MediaQuery.of(context).size.width / 1.5
                         : MediaQuery.of(context).size.width / 1.1,
                     child: const Carsoul(),
-                  )
+                  ),
                 ],
               ),
             ),
@@ -278,13 +242,15 @@ _launchWhatsapp() async {
                   const SizedBox(height: 20),
 
                   // Row items for 2nd type of equipments
-                  const Row(mainAxisAlignment: MainAxisAlignment.start, children: [
-                    Text(
-                      "Dairy Equipments",
-                      style:
-                          TextStyle(fontSize: 30, fontWeight: FontWeight.w900),
-                    ),
-                  ]),
+                  const Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Dairy Equipments",
+                          style: TextStyle(
+                              fontSize: 30, fontWeight: FontWeight.w900),
+                        ),
+                      ]),
                   const Divider(endIndent: 60),
 
                   const SizedBox(height: 10),
@@ -294,13 +260,15 @@ _launchWhatsapp() async {
                   const SizedBox(height: 20),
 
                   // Row items for 3rd type of equipments
-                  const Row(mainAxisAlignment: MainAxisAlignment.start, children: [
-                    Text(
-                      "Biology",
-                      style:
-                          TextStyle(fontSize: 30, fontWeight: FontWeight.w900),
-                    ),
-                  ]),
+                  const Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Biology",
+                          style: TextStyle(
+                              fontSize: 30, fontWeight: FontWeight.w900),
+                        ),
+                      ]),
                   const Divider(endIndent: 60),
 
                   const SizedBox(height: 10),
@@ -310,13 +278,15 @@ _launchWhatsapp() async {
                   const SizedBox(height: 20),
 
                   // Row items for 4th type of equipments
-                  const Row(mainAxisAlignment: MainAxisAlignment.start, children: [
-                    Text(
-                      "Laboratory Plastic Ware",
-                      style:
-                          TextStyle(fontSize: 30, fontWeight: FontWeight.w900),
-                    ),
-                  ]),
+                  const Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Laboratory Plastic Ware",
+                          style: TextStyle(
+                              fontSize: 30, fontWeight: FontWeight.w900),
+                        ),
+                      ]),
                   const Divider(endIndent: 60),
 
                   const SizedBox(height: 10),
@@ -326,13 +296,15 @@ _launchWhatsapp() async {
                   const SizedBox(height: 20),
 
                   // Row items for 5th type of equipments
-                  const Row(mainAxisAlignment: MainAxisAlignment.start, children: [
-                    Text(
-                      "Laboratory Glassware",
-                      style:
-                          TextStyle(fontSize: 30, fontWeight: FontWeight.w900),
-                    ),
-                  ]),
+                  const Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Laboratory Glassware",
+                          style: TextStyle(
+                              fontSize: 30, fontWeight: FontWeight.w900),
+                        ),
+                      ]),
                   const Divider(endIndent: 60),
 
                   const SizedBox(height: 10),
@@ -342,13 +314,15 @@ _launchWhatsapp() async {
                   const SizedBox(height: 20),
 
                   // Row items for 6th type of equipments
-                  const Row(mainAxisAlignment: MainAxisAlignment.start, children: [
-                    Text(
-                      "Laboratory Equipment",
-                      style:
-                          TextStyle(fontSize: 30, fontWeight: FontWeight.w900),
-                    ),
-                  ]),
+                  const Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Laboratory Equipment",
+                          style: TextStyle(
+                              fontSize: 30, fontWeight: FontWeight.w900),
+                        ),
+                      ]),
                   const Divider(endIndent: 60),
 
                   const SizedBox(height: 10),
@@ -358,13 +332,15 @@ _launchWhatsapp() async {
                   const SizedBox(height: 20),
 
                   // Row items for 7th type of equipments
-                  const Row(mainAxisAlignment: MainAxisAlignment.start, children: [
-                    Text(
-                      "Microscope",
-                      style:
-                          TextStyle(fontSize: 30, fontWeight: FontWeight.w900),
-                    ),
-                  ]),
+                  const Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Microscope",
+                          style: TextStyle(
+                              fontSize: 30, fontWeight: FontWeight.w900),
+                        ),
+                      ]),
                   const Divider(endIndent: 60),
 
                   const SizedBox(height: 10),
@@ -396,13 +372,15 @@ _launchWhatsapp() async {
                   const SizedBox(height: 20),
 
                   // Row items for 8th type of equipments
-                  const Row(mainAxisAlignment: MainAxisAlignment.start, children: [
-                    Text(
-                      "Engineering Lab instruments",
-                      style:
-                          TextStyle(fontSize: 30, fontWeight: FontWeight.w900),
-                    ),
-                  ]),
+                  const Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Engineering Lab instruments",
+                          style: TextStyle(
+                              fontSize: 30, fontWeight: FontWeight.w900),
+                        ),
+                      ]),
                   const Divider(endIndent: 60),
 
                   const SizedBox(height: 10),
@@ -412,13 +390,15 @@ _launchWhatsapp() async {
                   const SizedBox(height: 20),
 
                   // Row items for 9th type of equipments
-                  const Row(mainAxisAlignment: MainAxisAlignment.start, children: [
-                    Text(
-                      "Hospital Furniture & Equipments ",
-                      style:
-                          TextStyle(fontSize: 30, fontWeight: FontWeight.w900),
-                    ),
-                  ]),
+                  const Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Hospital Furniture & Equipments ",
+                          style: TextStyle(
+                              fontSize: 30, fontWeight: FontWeight.w900),
+                        ),
+                      ]),
                   const Divider(endIndent: 60),
 
                   const SizedBox(height: 10),
@@ -428,13 +408,15 @@ _launchWhatsapp() async {
                   const SizedBox(height: 20),
 
                   // Row items for 10th type of equipments
-                  const Row(mainAxisAlignment: MainAxisAlignment.start, children: [
-                    Text(
-                      "Surgical Instruments ",
-                      style:
-                          TextStyle(fontSize: 30, fontWeight: FontWeight.w900),
-                    ),
-                  ]),
+                  const Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Surgical Instruments ",
+                          style: TextStyle(
+                              fontSize: 30, fontWeight: FontWeight.w900),
+                        ),
+                      ]),
                   const Divider(endIndent: 60),
 
                   const SizedBox(height: 10),
@@ -452,12 +434,13 @@ _launchWhatsapp() async {
       ),
       floatingActionButton: FloatingActionButton(
         shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(5))
-     ),
-        backgroundColor: Colors.green.shade600,
+            borderRadius: BorderRadius.all(Radius.circular(15))),
+        backgroundColor: const Color.fromARGB(255, 109, 212, 114),
         onPressed: _launchWhatsapp,
-        child: const FaIcon(FontAwesomeIcons.whatsapp),),
-      endDrawer: MediaQuery.of(context).size.width > 1200 ? null : const EndDrawer(),
+        child: const FaIcon(FontAwesomeIcons.whatsapp),
+      ),
+      endDrawer:
+          MediaQuery.of(context).size.width > 450 ? null : const EndDrawer(),
     );
   }
 }

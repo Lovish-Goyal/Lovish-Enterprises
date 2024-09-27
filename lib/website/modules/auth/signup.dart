@@ -10,7 +10,7 @@ showAlertDialogSign(BuildContext context) {
 
   // set up the AlertDialog
   AlertDialog alert = AlertDialog(
-    insetPadding: const EdgeInsets.symmetric(vertical: 140),
+    insetPadding: const EdgeInsets.symmetric(vertical: 40),
     title: const Center(child: Text("SignUp to Lovish Enterprises")),
     content: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -100,7 +100,9 @@ showAlertDialogSign(BuildContext context) {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Text("Already have an account?"),
-            TextButton(onPressed: () => showAlertDialogLogin(context), child: const Text("Login"))
+            TextButton(
+                onPressed: () => showAlertDialogLogin(context),
+                child: const Text("Login"))
           ],
         ),
       ],

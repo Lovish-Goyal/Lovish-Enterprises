@@ -8,12 +8,14 @@ import 'utils/apiclient.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
   ApiClient.client
       .setEndpoint(Env.endpoint)
       .setProject(Env.projectId)
       .setSelfSigned(status: true);
 
   await Hive.initFlutter();
+
   runApp(
     const ProviderScope(
       child: OverlayNotification.global(
@@ -30,6 +32,7 @@ class MyApp extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final router = ref.watch(routerProvider);
     return MaterialApp.router(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.white),

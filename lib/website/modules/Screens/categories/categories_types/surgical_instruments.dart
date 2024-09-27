@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
 import '../../../../../widgets/appbar.dart';
 import '../../../../../widgets/drawer.dart';
@@ -41,7 +40,7 @@ class SurgicalInstrumentsView extends StatelessWidget {
                         Side(),
                       ],
                     )
-                  : Text("")
+                  : const Text("")
             ],
           ),
         ),

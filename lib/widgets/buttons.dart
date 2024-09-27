@@ -1,37 +1,42 @@
 import 'package:flutter/material.dart';
 
-// for light screen 
+// for light screen
 class TextbuttonDark extends StatelessWidget {
   final String text;
   final void Function()? onPressed;
-  const TextbuttonDark({super.key, required this.text, required this.onPressed});
+  const TextbuttonDark(
+      {super.key, required this.text, required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
     return TextButton(
         onPressed: onPressed,
         style: ButtonStyle(
+          textStyle: MaterialStateProperty.resolveWith<TextStyle>(
+            (Set<MaterialState> states) {
+              return const TextStyle(
+                fontWeight: FontWeight.bold,
+              );
+            },
+          ),
           foregroundColor: MaterialStateProperty.resolveWith<Color>(
               (Set<MaterialState> states) {
             if (states.contains(MaterialState.hovered)) return Colors.white;
-            return Colors.black;
+            return const Color.fromARGB(255, 45, 68, 79);
           }),
         ),
         child: Text(
           text,
-          style: const TextStyle(
-            fontWeight: FontWeight.w500,
-            fontSize: 16
-          ),
+          style: const TextStyle(fontWeight: FontWeight.w500, fontSize: 18),
         ));
   }
 }
 
-// for dark Screen
 class Textbuttonlight extends StatelessWidget {
   final String text;
   final void Function()? onPressed;
-  const Textbuttonlight({super.key, required this.text, required this.onPressed});
+  const Textbuttonlight(
+      {super.key, required this.text, required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -40,12 +45,16 @@ class Textbuttonlight extends StatelessWidget {
         style: ButtonStyle(
           foregroundColor: MaterialStateProperty.resolveWith<Color>(
               (Set<MaterialState> states) {
-            if (states.contains(MaterialState.hovered)) return Colors.blue;
+            if (states.contains(MaterialState.hovered))
+              return Color.fromARGB(255, 45, 68, 79);
             return Colors.white;
           }),
         ),
         child: Text(
           text,
+          style: const TextStyle(
+            fontSize: 18,
+          ),
         ));
   }
 }

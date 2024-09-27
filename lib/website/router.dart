@@ -25,7 +25,7 @@ final routerProvider = Provider<GoRouter>((ref) {
   return GoRouter(initialLocation: RouteKey.home, routes: [
     GoRoute(
       path: RouteKey.home,
-      builder: (context, state) => const HomeView(),
+      builder: (context, state) => HomeView(),
     ),
     GoRoute(
       path: RouteKey.about,
@@ -39,72 +39,68 @@ final routerProvider = Provider<GoRouter>((ref) {
       path: RouteKey.contact,
       builder: (context, state) => const Contact(),
     ),
-     GoRoute(
+    GoRoute(
       path: RouteKey.search,
       builder: (context, state) => const Search(),
     ),
-     GoRoute(
+    GoRoute(
       path: RouteKey.login,
       builder: (context, state) => showAlertDialogLogin(context),
     ),
-     GoRoute(
+    GoRoute(
       path: RouteKey.sign,
       builder: (context, state) => showAlertDialogSign(context),
     ),
-     GoRoute(
+    GoRoute(
       path: RouteKey.wish,
-      builder: (context, state) =>  const Wishlist(),
+      builder: (context, state) => const Wishlist(),
     ),
-     GoRoute(
+    GoRoute(
       path: RouteKey.product,
-      builder: (context, state) =>  const AllProducts(),
+      builder: (context, state) => const AllProducts(),
     ),
-
-
-
-     GoRoute(
+    GoRoute(
       path: RouteKey.dailyequipment,
-      builder: (context, state) =>  const DailyEquipmentView(),
+      builder: (context, state) => const DailyEquipmentView(),
     ),
-     GoRoute(
+    GoRoute(
       path: RouteKey.physics,
-      builder: (context, state) =>  const PhysicsView(),
+      builder: (context, state) => const PhysicsView(),
     ),
-     GoRoute(
-      path: RouteKey.biology,
-      builder: (context, state) => const BiologyView()
-    ),
-     GoRoute(
+    GoRoute(
+        path: RouteKey.biology,
+        builder: (context, state) => const BiologyView()),
+    GoRoute(
       path: RouteKey.plasticware,
-      builder: (context, state) =>  const LabPlasticWareView(),
+      builder: (context, state) => const LabPlasticWareView(),
     ),
-     GoRoute(
+    GoRoute(
       path: RouteKey.glassware,
-      builder: (context, state) =>  const LabGlassWareView(),
+      builder: (context, state) => const LabGlassWareView(),
     ),
-     GoRoute(
+    GoRoute(
       path: RouteKey.labequipment,
-      builder: (context, state) =>  const LabEquipmentView(),
+      builder: (context, state) => const LabEquipmentView(),
     ),
-     GoRoute(
+    GoRoute(
       path: RouteKey.microscope,
-      builder: (context, state) =>  const MicroscopeView(),
+      builder: (context, state) => const MicroscopeView(),
     ),
-     GoRoute(
+    GoRoute(
       path: RouteKey.biomodels,
-      builder: (context, state) =>  const BioModelsView(),
+      builder: (context, state) => const BioModelsView(),
     ),
-     GoRoute(
+    GoRoute(
       path: RouteKey.engglab,
-      builder: (context, state) =>  const EnggLabEquipmentsView(),
+      builder: (context, state) => const EnggLabEquipmentsView(),
     ),
-     GoRoute(
+    GoRoute(
       path: RouteKey.hospitalinstruments,
-      builder: (context, state) =>  const HospitalFurnitureView(),
+      builder: (context, state) => const HospitalFurnitureView(),
     ),
-     GoRoute(
+    GoRoute(
       path: RouteKey.surgicalinstruments,
-      builder: (context, state) =>  const SurgicalInstrumentsView(),
+      builder: (context, state) => const SurgicalInstrumentsView(),
     ),
   ]);
 });
@@ -120,7 +116,7 @@ class RouteKey {
   static const String sign = '/sign';
   static const String wish = '/wishlist';
 
-    // Product Items 
+  // Product Items
   static const String dailyequipment = '/dailyequipment';
   static const String physics = '/physics';
   static const String biology = '/biology';

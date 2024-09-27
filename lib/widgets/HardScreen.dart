@@ -30,8 +30,8 @@ class HardScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
-                      margin:
-                          const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                      margin: const EdgeInsets.symmetric(
+                          vertical: 10, horizontal: 20),
                       child: const Text(
                         'Order Now',
                         style: TextStyle(fontSize: 25),
@@ -105,8 +105,8 @@ class HardScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Container(
-                      margin:
-                          const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                      margin: const EdgeInsets.symmetric(
+                          vertical: 10, horizontal: 20),
                       child: const Text(
                         'OEM / Tenders',
                         style: TextStyle(fontSize: 25),
@@ -145,8 +145,8 @@ class HardScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Container(
-                      margin:
-                          const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                      margin: const EdgeInsets.symmetric(
+                          vertical: 10, horizontal: 20),
                       child: const Text(
                         'Dealership',
                         style: TextStyle(fontSize: 25),
@@ -185,7 +185,8 @@ class HardScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Container(
-                      margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 20),
+                      margin: const EdgeInsets.symmetric(
+                          vertical: 5, horizontal: 20),
                       child: const Text(
                         'Bulk Orders',
                         style: TextStyle(fontSize: 25),
@@ -224,8 +225,8 @@ class HardScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Container(
-                      margin:
-                          const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                      margin: const EdgeInsets.symmetric(
+                          vertical: 10, horizontal: 20),
                       child: const Text(
                         'Payment & Shipping',
                         style: TextStyle(fontSize: 25),
@@ -264,8 +265,8 @@ class HardScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Container(
-                      margin:
-                          const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                      margin: const EdgeInsets.symmetric(
+                          vertical: 10, horizontal: 20),
                       child: const Text(
                         'Support Team',
                         style: TextStyle(fontSize: 25),

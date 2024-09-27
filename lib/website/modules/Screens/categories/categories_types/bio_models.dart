@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
 import '../../../../../widgets/appbar.dart';
 import '../../../../../widgets/drawer.dart';
@@ -32,20 +31,22 @@ class BioModelsView extends StatelessWidget {
                       ),
                     ],
                   )),
-                  MediaQuery.of(context).size.width > 860 ? 
-              const Row(
-                children: [
-                  VerticalDivider(
-                    color: Colors.black,
-                  ),
-                  Side(),
-                ],
-              ) : const Text("")
+              MediaQuery.of(context).size.width > 860
+                  ? const Row(
+                      children: [
+                        VerticalDivider(
+                          color: Colors.black,
+                        ),
+                        Side(),
+                      ],
+                    )
+                  : const Text("")
             ],
           ),
         ),
       ),
-      endDrawer: MediaQuery.of(context).size.width > 1200 ? null : const EndDrawer(),
+      endDrawer:
+          MediaQuery.of(context).size.width > 1200 ? null : const EndDrawer(),
     );
   }
 }

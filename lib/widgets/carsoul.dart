@@ -54,7 +54,7 @@ class Carsoul extends StatelessWidget {
 
       //Slider Container properties
       options: CarouselOptions(
-        height: 500,
+        height: MediaQuery.of(context).size.width > 1000 ? 450 : null,
         enlargeCenterPage: true,
         autoPlay: true,
         // aspectRatio: 16 / 9,
